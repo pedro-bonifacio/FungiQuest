@@ -1,0 +1,14 @@
+1. Growth Location: Wood, soil or dung
+	1.1. If Wood then ask polypore
+2. Cap
+	2.1. Shape: convex, conical, flat, bell-shaped, umbonate, or funnel-shaped
+	2.2. Margin: smooth, wavy, lobed, or inrolled
+3. Gills
+	3.1. Type: Gills, pores, teeth/spines
+	3.2. Attachment: free, attached, adnate, or decurrent relative to the stem
+	3.3. Spacing(?): crowded, widely spaced, or forked
+4. Stem
+	4.1. Shape: cylindrical, club-shaped, bulbous, or absent
+	4.2. Presence of Rings (Annulus)
+	4.3. Surface: Smooth, scaly, fibrous, or ridged
+5. (Optional) Spore Print Color
