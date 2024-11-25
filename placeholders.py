@@ -6,7 +6,7 @@ def get_random_mushroom():
         "cap_shape": "Convex",
     }
 
-id_questionnaire = [{
+questionnaire = [{
         "tag": "growth_location",
         "question": "Where is this mushroom growing?",
         "options": {
