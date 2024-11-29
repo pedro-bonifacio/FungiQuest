@@ -1,6 +1,7 @@
 import gradio as gr
 from placeholders import questionnaire
 
+
 def update_accordions(options):
     max_accordions = 10
     accordions = []
@@ -20,14 +21,15 @@ def update_accordions(options):
     return accordions
 
 
-def update_quiz_state(q_index):
+def update_quiz_state(q_index, user_answers):
     """Wrapper to update quiz components based on the current question index."""
 
     accordions = update_accordions(questionnaire[q_index]['options'])
 
     updates = {
-        "question": gr.Markdown(f"### {questionnaire[q_index]['question']}"),
-        "radio": gr.Radio(choices=list(questionnaire[q_index]['options'].keys())),
+        "radio": gr.Radio(label= questionnaire[q_index]['question'],
+                          value=user_answers[questionnaire[q_index]['tag']],
+                          choices=list(questionnaire[q_index]['options'].keys())),
         "submit_btn": gr.Button("Submit", visible=True),
         "feedback": gr.Markdown(visible=False),
         "back_btn": gr.Button("← Back", visible=q_index > 0),
@@ -47,16 +49,20 @@ def decrement_question(current_q):
     return current_q - 1
 
 
-def check_answer(mushroom, answer, q_index):
+def check_answer(mushroom, answer, q_index, user_answers):
     """Check if answer is correct and show feedback"""
     if answer == mushroom[questionnaire[q_index]['tag']]:
         updates = {
             "feedback": gr.update(value="✓ Correct!", visible=True),
             "submit_btn": gr.update(visible=False)
         }
+        user_answers[questionnaire[q_index]['tag']] = answer
     else:
         updates = {
             "feedback": gr.update(value="✗ Incorrect. Try again!", visible=True),
             "submit_btn": gr.update(visible=True)
         }
-    return list(updates.values())
+    return list(updates.values()) + [user_answers]
+
+def show_quiz():
+    return 0, gr.update(visible=False), gr.update(visible=True), gr.update(visible=True)

@@ -17,7 +17,7 @@ questionnaire = [{
     },
     {
         "tag": "cap_shape",
-        "question": "What shape is the **cap** of this mushroom?",
+        "question": "What shape is the cap of this mushroom?",
         "options": {
             "Convex": ("Rounded and smooth, typically with a domed cap", "https://i0.wp.com/midwestmycology.org/wp-content/uploads/2019/06/mushroom-cap-shapes.jpg"),
             "Conical": ("Conical in shape, resembling a cone", "https://i0.wp.com/midwestmycology.org/wp-content/uploads/2019/06/mushroom-cap-shapes.jpg"),
